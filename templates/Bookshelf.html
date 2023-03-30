@@ -1,0 +1,117 @@
+{% extends "Navi.html" %}
+{% block title %} My Bookshelf {% endblock %}
+
+
+{% block content %}
+
+<div class="page-box">
+    <div class="contents-box">
+        <br><br><br>
+
+        <h2 class="banner-head"> Your bookshelf</h2> <br><br>
+
+        <div class="pure-g search-button-align">
+            <div class="pure-u-md-1-2">
+                <!-- According to the user's search, if there is no bookshelf, nothing apperars, and
+                if there is, the bookshelf searched by the users appears -->
+                <form action="{{url_for('book_shelf')}}" id="bookshelf-search" method="post">
+                    <input type="text" name="book_shelf" id="bookshelf-input" placeholder = "Search for bookshelf">
+                    <button type="submit" class="pure-button" img src="static/svg/search.svg">
+                        <i class="fa fa-solid fa-magnifying-glass"></i>
+                    </button>     
+                </form>
+            </div>
+            <div class="pure-u-md-1-2">
+                <!-- If the user clicked the Show All button, then it goes to book_shelf function
+                and just show the lists of bookshelves (GET method)-->
+                <div class="button-align">
+                    <form action="{{url_for('book_shelf')}}" id="bookshelf-search">
+                        <input type="submit" value = "Show All" class="pure-button show-all-bookshelf">
+                    </form>
+                </div>
+
+                <div class="pure-button add-shelf popup button-align">
+                    <i class="fa-solid fa-plus" id = "create-new" onclick="newShelfForm()"> Create new bookshelf</i>
+                    <div class="popuptext" id="popupBox">
+                        <form class="pure-form" id="newBookshelf" method="post">
+                            <input type="text" id="bookshelfName" name="bookshelfName" class="pure-input searchBox" placeholder="New bookshelf name" required="" />
+                            <br>
+                            <button type="submit" class="pure-button create-shelf-button">
+                                Save
+                            </button>
+                            <button type="button" class="pure-button create-shelf-button" onclick="closePopup()">
+                                Close
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <br><br>
+
+        <!-- if user is searching for specific bookshelf name -->
+        {% if searched_bookshelf %}
+            {% if books %}    
+            <div class="bookshelves-container"> 
+                {% for book in books %}
+                    <table class="pure-table-bordered" id="bookshelf">
+                        <tr>
+                            <th>
+                                <h3>{{bookshelves[0]}}</h3>
+                            </th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                {% for i in book %}
+                                <td id = "book_individual">{{i[0]}}</td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                {% endfor %}
+            </div>
+            <!-- no results matching search exist -->
+            {% else %}
+                <br>
+                <h3 class = "welcome">No bookshelves found!</h3>
+            {% endif %}
+        
+        <!-- else, show users own bookshelves -->
+        {% else %}
+            <!-- If an user has bookshelves -->
+            {% if bookshelves %}
+                <div class="bookshelves-container">
+                {% for bookshelf in bookshelves %}
+                    <table class="pure-table-bordered" id="bookshelf">
+                        <tr>
+                            <th>
+                                <h3>{{bookshelf}}</h3>
+                                <form class="pure-form" id="deleteBookshelf" method="post" action="/delete/{{bookshelf}}">
+                                    <button type="submit" class="pure-button shelf-delete-button" id="deleteButton">
+                                        delete
+                                    </button>
+                                </form>
+                            </th>
+                        </tr>
+                        <tbody>
+                            {% for book in books[bookshelves.index(bookshelf)] %}
+                                <tr>
+                                    <td id = "book_individual">{{book[0]}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endfor %}
+                </div>
+            <!-- If an user doesn't have any bookshelf -->
+            {% else %}
+                <br>
+                <h3 class = "welcome">You don't have any bookshelves!</h3>
+            {% endif %}
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

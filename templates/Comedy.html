@@ -1,0 +1,40 @@
+{% extends "Navi.html" %}
+{% block title %} Comedy {% endblock %}
+
+{% block content %}
+
+<br><br><br>
+<h2 class= "banner-head"> Comedy</h2>
+<div class = "genre_lists">
+    <div class = "pure-g">
+    {% for i in range(items_length): %}
+    <div class ="pure-u-1 pure-u-md-1-3">
+        {% if book_thumbnails[i] is none %}
+            <img src="static/svg/placeholderbook.svg" alt="Book picture" height="300"><br>
+        {% else %}
+            <img src = "{{book_thumbnails[i]}}" alt="Book picture" height="300"><br>
+        {% endif %}
+
+        <span id = "title"> {{comedy_title[i]}}</span> <br>
+        <span id = "author">{{author_names[i]}}</span><br>
+        <!-- <span id = "date"> {{book_published_dates[i]}}</span><br> -->
+
+        {% if session %}
+            <!-- <span id = "isbn">{{book_isbn13[i]}}</span><br> -->
+            <select name="featured_shelves" id="shelf_{{book_isbn13[i]}}">
+              <option value="">Select Bookshelf...</option>
+              {% for i in range(bookshelves_length): %}
+              <option value="{{bookshelves[i]}}">{{bookshelves[i]}}</option>
+              {% endfor %}
+            </select>
+        
+        <button type="submit" class ="add_to_bookshelf" id="{{book_isbn13[i]}}" value="{{book_isbn13[i]}}" onclick='add_book(document.getElementById("{{book_isbn13[i]}}").value, document.getElementById("shelf_{{book_isbn13[i]}}").value, "{{comedy_title[i]}}")'>
+           <img src ="static/svg/addbutton.svg" id ="add_button"></button>
+           <br>
+           <div id="status_{{book_isbn13[i]}}"> <br> </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+ </div>
+</div>
+{% endblock %}

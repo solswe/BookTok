@@ -1,0 +1,19 @@
+{% extends "Navi.html"%}
+{% block title %} Account {% endblock %}
+
+{% block content %}
+
+    <br><br><br>
+
+    <h2 class= "banner-head"> Account </h2>
+
+    {% if session %}
+    <div class = "profile_pic">
+        <img src="{{session.userinfo.picture}}" alt="user_picture">
+    </div>
+        <h3 class = "welcome"> Welcome {{session.userinfo.name}}!</h3>
+    {% else %}
+        <h3 class = "welcome">Login to access account settings.</h3>
+    {% endif %}
+
+{% endblock %}

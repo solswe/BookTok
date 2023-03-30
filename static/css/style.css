@@ -1,0 +1,519 @@
+/*
+ * -- BASE STYLES --
+ */
+body {
+  color: #526066;
+}
+
+h2,
+h3 {
+  letter-spacing: 0.25em;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.6em;
+}
+
+/*
+   * -- Layout Styles --
+   */
+.l-content {
+  margin: 10 auto;
+}
+
+.l-box {
+  padding: 0.5em 2em;
+}
+
+/*
+   * -- MENU STYLES --
+   */
+.pure-menu {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.pure-menu-link {
+  padding: 0.5em 0.7em;
+}
+
+/*
+   * -- BANNER --
+*/
+
+.banner-head {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2em;
+  color: Black;
+  font-weight: 500;
+  text-shadow: 0 1px 1px black;
+}
+
+/*
+* -- GENRES --
+*/
+.genres,
+.information {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.genres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 3.125em;
+  text-align: center;
+  place-items: center;
+  padding-right: 4em;
+}
+
+.genre-button {
+  border: none;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  cursor: pointer;
+  display: inline-block;
+  height: 100px;
+  width: 155px;
+}
+
+#romance_button {
+  background-color: lightblue;
+}
+
+#thriller_button {
+  background-color: lavender;
+}
+
+#nonfiction_button {
+  background-color: lightseagreen;
+}
+
+#horror_button {
+  background-color: lightcoral;
+}
+
+#comedy_button {
+  background-color: lightskyblue;
+}
+
+#children_button {
+  background-color: palevioletred;
+}
+
+
+#romance_button:hover {
+  background-color: rgb(115, 171, 190);
+}
+
+#thriller_button:hover {
+  background-color: rgb(184, 184, 222);
+}
+
+#nonfiction_button:hover {
+  background-color: rgb(20, 132, 126);
+}
+
+#horror_button:hover {
+  background-color: rgb(208, 98, 98);
+}
+
+#comedy_button:hover {
+  background-color: rgb(85, 143, 180);
+}
+
+#children_button:hover {
+  background-color: rgb(171, 69, 103);
+}
+
+.genre-table-header {
+  background: #111;
+  color: #fff;
+}
+
+.genre-table h2 {
+  margin: 0;
+  padding-top: 2em;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.genre_lists {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 70%;
+  font-size: medium;
+  text-align: center;
+  border-radius: 2em;
+  margin: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
+}
+
+/* ACCOUNT PAGE */
+
+.account_logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 7%;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.profile_pic {
+  display: block;
+  text-decoration: underline;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+
+/* FEATURED BOOKS LIST */
+.featured_list {
+  width: 70%;
+  font-size: medium;
+  text-align: center;
+  border-radius: 2em;
+  margin: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
+}
+
+#add_button{
+  margin-bottom: -4px;
+  width:20px;
+  height: 20px;
+}
+
+#add_button:hover{
+  background-color: #c6baba;
+}
+
+.add_to_bookshelf{
+  margin-top: 20px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#title{
+font-family: 'american typewriter', serif;
+font-size:larger;
+}
+
+#author{
+  font: small;
+}
+
+#isbn{
+font-size: small;
+}
+
+
+/* BOOK SHELF */
+
+#create-new{
+  font-family: Arial, Helvetica, sans-serif;
+  /* margin-bottom: -300px; */
+}
+
+.add-shelf {
+  background-color:rgb(254, 237, 206);
+  color: #0e0d0d;
+  position: absolute;
+}
+
+.show-all-bookshelf{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:rgb(254, 237, 206);
+  color: #0e0d0d;
+  margin-right: 20px;
+  /* position: absolute; */
+}
+
+.button-align{
+  display: inline-block;
+  align-items: center;
+  margin-top: 10px
+}
+
+.search-button-align{
+  margin-left: 130px;
+}
+
+#bookshelf-search{
+  display:flex;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+#bookshelf-input{
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  outline-color: wheat;
+  width: 80%;
+}
+
+.bookshelf-login {
+  background: rgb(131, 219, 246);
+  color: white;
+  margin: auto;
+  border-radius: 4px;
+  width: 130px;
+  text-align: center;
+}
+
+#bookshelf{
+  align-items: center;
+  display: grid;
+  border-color: brown;
+  border: 4px;
+  display: flex;
+  color: rgb(236, 216, 186);
+  border-style: solid;
+  background-color: rgb(195, 169, 133);
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+#newBookshelf{
+font-style: bold;
+font-size: larger;
+}
+
+.shelf-delete-button {
+  background-color: #7d7d7d;
+  color: #fff;
+  font-size: 12px;
+}
+
+.bookshelves-container {
+  align-items: center;
+  padding: 15px;
+  margin-left: 60px;
+}
+
+#book_individual{
+  font-family: 'Courier New', Courier, monospace;
+  align-content: left;
+  color: black;
+  display: table;
+}
+
+#delete_button{
+  background-color: transparent;
+  border-color: transparent;
+  height: 30px;
+  width: 30px;
+}
+
+#delete_button_image{
+  background-color: transparent;
+  border-color: transparent;
+  height: 20px;
+  width: 20px;
+}
+
+/* Code reference: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup */
+.popup {
+  margin-right: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  display: none;
+  /* visibility: hidden; */
+  width: 300px;
+  font-size: 13px;
+  background-color: #99c3f1;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 140%;
+  left: 50%;
+  margin-left: -180px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #99c3f1 transparent transparent transparent;
+  transform: rotate(180deg);
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* FOOTER */
+.page-box {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contents-box {
+  padding-bottom: 7rem;
+}
+
+.footer {
+  background: #79ceed;
+  opacity: 0.9;
+  color: #161616;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+}
+
+.footer a {
+  color: #ddd;
+}
+
+/*
+   * -- TABLET MEDIA QUERIES --
+   * On tablets, we want to slightly adjust the size of the banner
+   * text and add some vertical space between the various pricing tables
+   */
+   @media (min-width: 767px) {
+    .banner-head {
+      font-size: 3em;
+    }
+  
+    .pricing-table {
+      margin-bottom: 0;
+    }
+  }
+  
+/*
+     * -- PHONE MEDIA QUERIES --
+     * On phones, we want to reduce the height and font-size of the banner further
+     */
+  @media (min-width: 480px) {
+    .banner {
+      height: 400px;
+    }
+  
+    .banner-head {
+      font-size: 2em;
+    }
+  }
+  
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* BOOK */
+
+.book-bookcover{
+  margin: auto;
+  min-height: 350px;
+  aspect-ratio: auto;
+  display: block;
+}
+
+.book-info-picture{
+  margin-top: 5%;
+}
+
+.book-info-list {
+  margin-left: 20px;
+}
+
+.book-info-container{
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5%;
+}
+
+.book-info-review {
+  /* align-items: center; */
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: left;
+  margin-left: 15%;
+}
+
+.book-info-header{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  line-height: 40px;
+}
+
+.book-info-title{
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2em;
+  color: #0b0b0b;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+textarea {
+  margin-left: 5px;
+  width: 80%;
+  height: 120px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: both;
+}
+
+.review-button{
+  background-color: #8cdcfa;
+  text-align: center;
+  margin-top: 70px;
+  margin-left: 5px;
+}
+
+.review-style{
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}

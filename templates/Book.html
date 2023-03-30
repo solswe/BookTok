@@ -1,0 +1,52 @@
+{% extends "Navi.html" %}
+{% block title %} Thriller {% endblock %}
+
+{% block content %}
+
+<br>
+<br><br><br>
+
+<div class="book-info-header">
+    <h2 class="book-info-title">{{book_title}}</h2>
+</div>
+
+<div class="pure-g book-info-container">
+    <div class="pure-u-1 pure-u-md-1-3 book-info-picture">
+        {% if book_thumbnails == '' %}
+            <img src="static/placeholderbook.svg" alt="Book picture" class="book-bookcover"><br>
+        {% else %}
+            <img src="{{book_thumbnails}}" alt="Book picture" class="book-bookcover"><br><br>
+        {% endif %}
+    </div>
+    <div class="pure-u-1 pure-u-md-1-2 book-info-list">
+            <h3>{{author_names}}</h3>
+            <p>{{book_description}}</p>
+            <br>
+            <li>Published date: {{book_published_dates}}</li>
+            <li>ISBN: {{book_isbn}}</li>
+        </li>
+    </div>
+</div>
+<div class="book-info-review">
+    <h3>Review</h3>
+    <form class="pure-form review-box" id="bookReview" method="post">
+        <textarea class="book-review-input" id="newReview" name="newReview" minlength="5" maxlength="1000" required=""></textarea>
+        <button type="submit" class="pure-button review-button">Submit</button>
+    </form>
+    <br>
+    <i class="fa-sharp fa-solid fa-user-alien"></i>
+    <table>
+        <tbody>
+            {% for review in reviews %}
+            <tr>
+                <td class="review-style">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    &nbsp;&nbsp; {{review}}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
