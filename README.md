@@ -26,7 +26,7 @@ Python, Flask, SQL(PostgreSQL), Javascript, HTML/CSS, Jinja, and PureCSS
 Google Books API, The New York Times API, Auth0, PureCSS, and Font awesome
 
 * Deployed with
-Render (https://render.com/)
+[Render](https://render.com/)
 
 
 ## Link to Site
