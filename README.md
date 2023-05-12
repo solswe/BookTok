@@ -23,7 +23,11 @@ This full-stack web application is designed for book discovery, tracking, and re
 Python, Flask, SQL(PostgreSQL), Javascript, HTML/CSS, Jinja, and PureCSS
 
 * External dependencies:
-Google Books API, The New York Times API, Auth0, PureCSS, and Font awesome
+  * [Google Books API](https://developers.google.com/books)
+  * [The New York Times API](https://developer.nytimes.com/docs/books-product/1/overview)
+  * [Auth0](https://auth0.com/docs)
+  * [PureCSS](https://purecss.io/)
+  * [Font awesome](https://fontawesome.com/)
 
 * Deployed with
 [Render](https://render.com/)
