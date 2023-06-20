@@ -8,9 +8,11 @@ import os
 # auth imports
 from os import environ as env
 from urllib.parse import quote_plus, urlencode
-
 from authlib.integrations.flask_client import OAuth
 from dotenv import find_dotenv, load_dotenv
+
+
+app = Flask(__name__)
 
 # Load .env file
 ENV_FILE = find_dotenv()

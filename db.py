@@ -38,7 +38,6 @@ def get_db_connection():
 def get_db_cursor(commit=False):
     with get_db_connection() as connection:
       cursor = connection.cursor(cursor_factory=DictCursor)
-      # cursor = connection.cursor()
       try:
           yield cursor
           if commit:
