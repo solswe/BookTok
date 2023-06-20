@@ -20,7 +20,7 @@ This full-stack web application is designed for book discovery, tracking, and re
 ## Technologies
 
 * Built with
-Python, Flask, SQL(PostgreSQL), Javascript, HTML/CSS, Jinja, and PureCSS
+Python, Flask, SQL(PostgreSQL), Javascript, HTML/CSS, Jinja2, Gunicorn, Psycopg2, and PureCSS
 
 * External dependencies:
   * [Google Books API](https://developers.google.com/books)
@@ -34,5 +34,5 @@ Python, Flask, SQL(PostgreSQL), Javascript, HTML/CSS, Jinja, and PureCSS
 
 
 ## Link to Site
-<https://booktok-2023.onrender.com>
+<https://booktok-lrn6.onrender.com/>
 
